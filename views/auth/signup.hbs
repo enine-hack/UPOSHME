@@ -1,0 +1,30 @@
+<div id="signup">
+  <h1>M'INSCRIRE</h1>
+  <form action="/signup" method="POST">
+    <label>
+      CIVILITE
+      <input type="text" name="civilite" placeholder="M ou MME" />
+    </label>
+    <label>
+      PRENOM
+      <input type="text" name="firstname" placeholder="Prénom" />
+    </label>
+    <label>
+      NOM
+      <input type="text" name="lastname" placeholder="Nom" />
+    </label>
+    <label>
+      EMAIL
+      <input type="text" id="input-email" name="email" placeholder="Email" />
+    </label>
+    <label>
+      PASSWORD
+      <input type="password" name="passwordHash" id="input-password" placeholder="********" />
+    </label>
+    <button>CREER UN COMPTE</button>
+    {{!-- error message will be added here --}}
+    {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>

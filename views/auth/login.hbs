@@ -1,0 +1,15 @@
+<div id="form">
+  <h1>SE CONNECTER</h1>
+  <form action="/login" method="POST">
+    <label>
+      EMAIL
+      <input type="email" name="email" placeholder="Email" />
+    </label>
+    <label for="input-password">PASSWORD</label>
+    <input type="password" name="password" id="input-password" placeholder="********" />
+    <button type="submit">SE CONNECTER</button>
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
