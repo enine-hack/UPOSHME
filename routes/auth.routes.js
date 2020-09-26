@@ -14,17 +14,19 @@ router.get('/signup', (req, res, next) => {
     res.render('auth/signup', {})
   })
 
-//const salt = bcryptjs.genSaltSync(10)
+
 
 
 //Route POST SIGNUP USER
-//router.post('/signup', (req,res, next) => {
-   // console.log('valeurs', req.body)
+/*const salt = bcryptjs.genSaltSync(10)
+
+router.post('/signup', (req,res, next) => {
+   console.log('valeurs', req.body)*/
 
 // Route GET LOGIN USER 
 router.get('/login', (req, res, next) => {
     res.render('auth/login')
   })
 
-  
+
 module.exports = router;
