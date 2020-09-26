@@ -8,9 +8,9 @@ const User = require('../models/user.model')
 
 const router = express.Router()
 
-// router.get('/tuto', (req, res, next) => {
-//   res.render('auth/tuto', {})
-// })
+router.get('/tuto', (req, res, next) => {
+ res.render('auth/tuto', {})
+ })
 
 // Route GET SIGNUP USER
 
@@ -35,8 +35,8 @@ router.post('/signup', (req,res, next) => {
       passwordHash: hashed,
       registrationDate : req.body.registrationDate
     }).then(userFromDb => {
-      // res.redirect('/profile')
-      res.send('user créé!')
+      res.redirect('/tuto')
+     // res.send('user créé!')
     }).catch(err => {
       console.log(':boum:', err);
       // new mongoose.Error.ValidationError()
