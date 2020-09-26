@@ -1,0 +1,42 @@
+<div id="business">
+  <h1>Augmentez vos ventes grâce à UPOSH|ME</h1>
+  <form action="/business/contact" method="POST">
+    <label>
+      SOCIETE
+      <input type="text" name="society" placeholder="Société" />
+    </label>
+    <label>
+      ACTIVITE PRINCIPALE
+      <input type="text" name="activity" placeholder="Activité principale" />
+    </label>
+    <label>
+      PAYS
+      <input type="text" name="country" placeholder="Pays" />
+    </label>
+    <label>
+      PRENOM
+      <input type="text" name="firstname" placeholder="Prénom" />
+    </label>
+    <label>
+      NOM
+      <input type="text" name="lastname" placeholder="Nom" />
+    </label>
+    <label>
+      N° DE TELEPHONE
+      <input type="text" name="phone" placeholder="Numéro de téléphone" />
+    </label>
+    <label>
+      EMAIL
+      <input type="text" id="input-email" name="email" placeholder="Email" />
+    </label>
+    <label>
+      PASSWORD
+      <input type="password" name="passwordHash" id="input-password" placeholder="********" />
+    </label>
+    <button>ETRE RECONTACTE</button>
+    {{!-- error message will be added here --}}
+    {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>

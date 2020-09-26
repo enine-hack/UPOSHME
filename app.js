@@ -54,6 +54,8 @@ const indexRouter = require('./routes/index')
 app.use('/',indexRouter)
 const authRouter = require('./routes/auth.routes')
 app.use('/',authRouter)
+const businessRouter = require('./routes/business.routes')
+app.use('/business',businessRouter)
 
 
 module.exports = app;
