@@ -14,4 +14,9 @@ router.get('/mybrands', (req, res, next) => {
     res.render('brands/mybrands')
   })
 
+
+  // Route GET BRANDS/ADD
+  
+
+
 module.exports = router;
