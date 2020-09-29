@@ -22,11 +22,11 @@ router.get('/mybrands', (req, res, next) => {
     next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
   })
 })
-    //res.render('brands/mybrands')
- 
+
+  
 
 
-  // Route GET BRANDS/ADD
+
   
 
 

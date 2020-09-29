@@ -32,6 +32,7 @@ const userSchema = new Schema(
     registrationDate: {
         type: Date,
       }
+
   },
   {
     timestamps: true

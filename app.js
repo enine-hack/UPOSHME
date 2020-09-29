@@ -46,7 +46,10 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
+app.use(function (req, res, next) {
+  res.locals.user = req.session.user; // dans chq template, on dispose de `user`
+  next()
+})
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';

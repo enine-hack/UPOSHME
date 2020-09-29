@@ -14,7 +14,16 @@
         <p><a href="/"> UPOSH|ME </a></p>
       </li>
       <li id="to-right">
+        {{#if user}}
+        <a href="/mybrands">MES MARQUES</a>
+        <a href="/login">{{ user.firstname }} {{ user.lastname }}</a>
+        <form id="logout-form" action="/logout" method="POST">
+        <button>SE DECONNECTER</button>
+        </form>
+        
+        {{else}}
       <a href="/login">SE CONNECTER</a>
+        {{/if}}
       </li>
     </ul>
   </nav>

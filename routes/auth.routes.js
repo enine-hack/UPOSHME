@@ -92,8 +92,20 @@ router.post('/login', (req, res, next) => {
 
 // Route GET/PROFIL
 
-// router.get('/profil', (req, res, next) => {
-//   res.r('auth/profil-edit')
-// })
+router.get('/profile', (req, res, next) => {
+  if (!req.session.user) {
+    res.redirect('/login')
+  }
+  res.render('auth/profil-edit', {
+    user: req.session.user
+  })
+})
+
+//Route POST Logout
+
+router.post('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
 
 module.exports = router;
