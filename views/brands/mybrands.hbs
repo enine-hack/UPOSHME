@@ -1,1 +1,17 @@
 <button><a href="/brand-add">+ AJOUTER UNE MARQUE</a></button>
+
+<div>
+  <ul>
+  {{#each brands}}
+    <li>
+      <div>
+        <img src="{{logoUrl}}">
+        <div>
+          <div>{{brandname}}</div>
+        
+        </div>
+      </div>
+    </li>
+  {{/each}}
+  </ul>
+</div>

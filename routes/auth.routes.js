@@ -90,4 +90,10 @@ router.post('/login', (req, res, next) => {
 })
 
 
+// Route GET/PROFIL
+
+// router.get('/profil', (req, res, next) => {
+//   res.r('auth/profil-edit')
+// })
+
 module.exports = router;
