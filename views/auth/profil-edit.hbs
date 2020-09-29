@@ -1,11 +1,12 @@
-{{!-- {{#if user}}
+{{#if user}}
   <h1>MON PROFIL</h1>
-  <h2>{{ user.civilite }} {{ user.firstname }} {{ user.lastname }}</h2>
-  <p>Membre depuis le {{ user.createdAt }}</p>
+  <h3>{{ user.civilite }}</h3>
+  <h3>{{ user.firstname }}</h3>
+  <h3>{{ user.lastname }}</h3>  
+  <h3>Membre depuis le {{ user.createdAt }}</h3>
   <button>ENREGISTRER</button>
-    <button>SUPPRIMER MON COMPTE</button>
+  <button>SUPPRIMER MON COMPTE</button>
 {{else}}
-  <p>Vous n'êtes pas connecté.</p>
-  <h2></h2>
+  <h3>Vous n'êtes pas connecté.</h3>
   <button><a href="/login"></a>SE CONNECTER</button>
-{{/if}} --}}
+{{/if}}

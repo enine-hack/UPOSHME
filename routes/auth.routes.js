@@ -101,11 +101,17 @@ router.get('/profile', (req, res, next) => {
   })
 })
 
+// Route GET/PROFIL-EDIT
+router.get('/profil-edit', (req, res, next) => {
+  res.render('auth/profil-edit', {})
+})
+
 //Route POST Logout
 
 router.post('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
 });
+
 
 module.exports = router;
