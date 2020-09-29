@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 // importer le model brand
 const Brand = require('../models/brand.model');
-
+// const Business = require('../models/business.model');
+// const User = require('../models/user.model');
 // donner un nom de variable à notre base 
 const dbtitle = 'uposhme';
 // connecter notre base a mongodb
