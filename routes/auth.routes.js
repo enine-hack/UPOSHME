@@ -92,7 +92,7 @@ router.post('/login', (req, res, next) => {
 
 // Route GET/PROFIL
 
-router.get('/profile', (req, res, next) => {
+router.get('/profil-edit', (req, res, next) => {
   if (!req.session.user) {
     res.redirect('/login')
   }
@@ -101,9 +101,18 @@ router.get('/profile', (req, res, next) => {
   })
 })
 
-// Route GET/PROFIL-EDIT
-router.get('/profil-edit', (req, res, next) => {
-  res.render('auth/profil-edit', {})
+
+// Route POST/PROFIL-EDIT
+router.post('/profile-edit', (req, res, next) => {
+  // maj en base des données modifiées
+  const {email, passwordHash} = req.body;
+  User.findByIdAndUpdate( {
+    email: email,
+    passwordHash: passwordHash,
+  }, {new: true}).then(updateddata => {
+    // Données mises à jour
+    res.redirect(`/profil-edit`)
+  }).catch(err => next(err))
 })
 
 //Route POST Logout

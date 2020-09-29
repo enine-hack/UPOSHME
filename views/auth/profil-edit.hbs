@@ -4,7 +4,18 @@
   <h3>{{ user.firstname }}</h3>
   <h3>{{ user.lastname }}</h3>  
   <h3>Membre depuis le {{ user.createdAt }}</h3>
-  <button>ENREGISTRER</button>
+
+<form action="/profil-edit" method="POST">
+  <label>
+    Email
+    <input type="text" name="email" value="{{user.email}}" />
+  </label>
+  <label>
+    Mot de passe
+    <input type="text" name="passwordHash"  placeholder="********" />
+  </label>
+    <button>ENREGISTRER MODIFICATION</button>
+</form>
   <button>SUPPRIMER MON COMPTE</button>
 {{else}}
   <h3>Vous n'êtes pas connecté.</h3>
