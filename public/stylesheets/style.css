@@ -173,4 +173,22 @@ footer li {
   font-size: 20px;
   font-family: 'Montserrat', sans-serif; }
 
+/*
+##     ## ##    ##    ########  ########     ###    ##    ## ########   ######  
+###   ###  ##  ##     ##     ## ##     ##   ## ##   ###   ## ##     ## ##    ## 
+#### ####   ####      ##     ## ##     ##  ##   ##  ####  ## ##     ## ##       
+## ### ##    ##       ########  ########  ##     ## ## ## ## ##     ##  ######  
+##     ##    ##       ##     ## ##   ##   ######### ##  #### ##     ##       ## 
+##     ##    ##       ##     ## ##    ##  ##     ## ##   ### ##     ## ##    ## 
+##     ##    ##       ########  ##     ## ##     ## ##    ## ########   ######  
+*/
+#mybrands-entete {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px; }
+
+#mybrands-entete h1 {
+  margin-right: 700px;
+  font-size: 40px; }
+
 /*# sourceMappingURL=style.css.map */
