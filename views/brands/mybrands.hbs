@@ -1,20 +1,22 @@
-<h1>MES MARQUES</h1>
+<div class="my-brands">
+  <h1>MES MARQUES</h1>
 
 
-<button><a href="/brand-add">+ AJOUTER UNE MARQUE</a></button>
+  <button><a href="/brand-add">+ AJOUTER UNE MARQUE</a></button>
 
-<div>
-  <ul>
-  {{#each brands}}
-    <li>
-      <div>
-        <img src="{{logoUrl}}">
+  <div>
+    <ul>
+    {{#each brands}}
+      <li>
         <div>
-          <div>{{brandname}}</div>
-        
+          <img src="{{logoUrl}}">
+          <div>
+            <div>{{brandname}}</div>
+          
+          </div>
         </div>
-      </div>
-    </li>
-  {{/each}}
-  </ul>
+      </li>
+    {{/each}}
+    </ul>
+  </div>
 </div>
