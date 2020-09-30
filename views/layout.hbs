@@ -4,28 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-  <nav>
-    <ul>
-      <li id="to-left">
-        <p><a href="/"> UPOSH|ME </a></p>
-      </li>
-      <li id="to-right">
+  <nav class= "navbar-container">
+    <div id="to-left"><a href="/"> UPOSH|ME </a></div>
+
+    <div id="to-right">
         {{#if user}}
-        <a href="/mybrands">MES MARQUES</a>
-        <a href="/profil-edit">{{ user.firstname }} {{ user.lastname }}</a>
-        <form id="logout-form" action="/logout" method="POST">
-        <button>SE DECONNECTER</button>
+        <div>
+          <a href="/mybrands">MES MARQUES</a>
+        </div>
+        <div>
+          <a href="/profil-edit">{{ user.firstname }} {{ user.lastname }}</a>
+        </div>
+        <div>
+          <form id="logout-form" action="/logout" method="POST">
+          <button>SE DECONNECTER</button>
+        </div>
         </form>
         
         {{else}}
-      <a href="/login">SE CONNECTER</a>
+        <div><a href="/login">SE CONNECTER</a></div>
         {{/if}}
-      </li>
-    </ul>
+    </div>
   </nav>
 
   {{{body}}}

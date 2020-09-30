@@ -1,5 +1,9 @@
 *, :before, :after {box-sizing:border-box;}
 
+/*Nos polices
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+
 /* creer les variables couleurs */
 :root {
   --gold: #EEAB00;
@@ -9,11 +13,13 @@
   
 }
 
+
+
 body {
   // padding: 50px;
   margin:0;
   background-color: #FDFDFD;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -23,6 +29,18 @@ a {
 //   color:inherit;
 //   text-decoration:none;
 // }
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 /*
 ##    ##    ###    ##     ## ########     ###    ########  
@@ -34,17 +52,45 @@ a {
 ##    ## ##     ##    ###    ########  ##     ## ##     ## 
 */
 
-nav {
-  padding-right:1em;
-}
-
-
-nav ul {
-  display:flex;
-  justify-content: space-between;
+.navbar-container {
+  background: white;
+  color: var(--black-button);
+  display: flex;
   align-items: center;
-  list-style-type: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 2px 3px #B5B5B5;
+  
 }
+
+#to-left{
+  font-size: 20px;
+}
+
+#to-right{
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 470px;
+  
+}
+
+nav div:nth-child(1) {
+  margin-right:auto;
+}
+
+nav div:nth-child(2) {
+  margin-right:20px;
+}
+
+
+
+
+
 
 /*
 ########  #######   #######  ######## ######## ########  
