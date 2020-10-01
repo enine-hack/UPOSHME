@@ -4,19 +4,15 @@
     <button><a href="/brand-add">+ AJOUTER UNE MARQUE</a></button>
   </div>
 
-  <div id="img-brand">
-    <ul>
+  <div id="mybrands-img">
+    
     {{#each brands}}
-      <li>
-        <div>
-          <img src="{{logoUrl}}">
-          <div>
-            <div>{{brandname}}</div>
-          </div>
-        </div>
-      </li>
+      <div><img id="logo" src="{{logoUrl}}"></div>
+      
+
+      
     {{/each}}
-    </ul>
+    
   </div>
 
 </div>
