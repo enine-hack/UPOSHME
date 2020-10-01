@@ -97,7 +97,8 @@ router.get('/profil-edit', (req, res, next) => {
     res.redirect('/login')
   }
   res.render('auth/profil-edit', {
-    user: req.session.user
+    user: req.session.user,
+    message: req.query.message
   })
 })
 
@@ -106,13 +107,13 @@ router.get('/profil-edit', (req, res, next) => {
 router.post('/profil-edit', (req, res, next) => {
   // maj en base des données modifiées
   const {email, passwordHash} = req.body;
-  User.findOneAndUpdate( {
+  User.findOneAndUpdate({_id: req.session.user._id}, {
     email: email,
-    passwordHash: passwordHash,
+    //passwordHash: passwordHash,
   }, {new: true}).then(updateddata => {
     // Données mises à jour
     console.log(email)
-    res.redirect(`/profil-updated`)
+    res.redirect(`/profil-edit?message=${encodeURIComponent("coucou ca va")}`) // flash message
   }).catch(err => next(err))
 })
 
@@ -138,7 +139,7 @@ router.get('/profil-deleted', (req, res, next) => {
   })
 })
 
-// Route POST/PROFIL-DELETED
+// Route POST/PROFIL-DELETED == conflit
 router.post('/profil-edit', (req, res, next) => {
   // maj en base des données modifiées
   const {email} = req.body;

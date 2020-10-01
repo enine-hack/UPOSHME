@@ -6,6 +6,10 @@
   <h3>{{ user.lastname }}</h3>  
   <h3>Membre depuis le {{ user.createdAt }}</h3>
 
+{{#if message}}
+{{message}}
+{{/if}}
+
 <form action="/profil-edit" method="POST">
   <label>
     Email
@@ -17,7 +21,10 @@
   </label>
     <button>ENREGISTRER MODIFICATION</button>
 </form>
+
+<form action="/delete-user" method="GET">
   <button>SUPPRIMER MON COMPTE</button>
+</form>
 {{else}}
   <h3>Vous n'êtes pas connecté.</h3>
   <button><a href="/login"></a>SE CONNECTER</button>

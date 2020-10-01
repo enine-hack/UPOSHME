@@ -23,7 +23,17 @@ router.get('/mybrands', (req, res, next) => {
   })
 })
 
-  
+// route GET BRAND-ADD  
+
+router.get('/brand-add', (req, res, next) => {
+  if (!req.session.user) {
+    res.redirect('/login')
+  }
+  res.render('brands/brand-add', {
+    user: req.session.user
+  })
+})
+
 
 
 
