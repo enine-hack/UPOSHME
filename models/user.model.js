@@ -3,9 +3,9 @@ const { Schema, model } = require('mongoose');
 const userSchema = new Schema(
   {
     civilite: {
-        type: String,
-        trim: true,
-        required: [true, 'civilite is required.']
+      type: {type: String, enum: ['Monsieur', 'Madame']},
+        // trim: true,
+        // required: [true, 'civilite is required.']
       },
     firstname: {
       type: String,

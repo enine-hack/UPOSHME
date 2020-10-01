@@ -111,6 +111,7 @@ router.post('/profil-edit', (req, res, next) => {
     passwordHash: passwordHash,
   }, {new: true}).then(updateddata => {
     // Données mises à jour
+    console.log(email)
     res.redirect(`/profil-updated`)
   }).catch(err => next(err))
 })
@@ -126,6 +127,29 @@ router.get('/profil-updated', (req, res, next) => {
   })
 })
 
+// Route GET/PROFIL-DELETED
+
+router.get('/profil-deleted', (req, res, next) => {
+  if (!req.session.user) {
+    res.redirect('/login')
+  }
+  res.render('auth/profil-deleted', {
+    user: req.session.user
+  })
+})
+
+// Route POST/PROFIL-DELETED
+router.post('/profil-edit', (req, res, next) => {
+  // maj en base des données modifiées
+  const {email} = req.body;
+  User.findByIdAndDelete( {
+    email: email,
+  }, {new: true}).then(updateddata => {
+    // Données mises à jour
+    console.log(email)
+    res.redirect(`/profil-deleted`)
+  }).catch(err => next(err))
+})
 
 //Route POST Logout
 
