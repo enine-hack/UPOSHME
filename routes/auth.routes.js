@@ -117,17 +117,6 @@ router.post('/profil-edit', (req, res, next) => {
   }).catch(err => next(err))
 })
 
-// // Route GET/PROFIL-UPDATED
-
-// router.get('/profil-updated', (req, res, next) => {
-//   if (!req.session.user) {
-//     res.redirect('/login')
-//   }
-//   res.render('auth/profil-updated', {
-//     user: req.session.user
-//   })
-// })
-
 // Route GET/PROFIL-DELETED
 
 router.get('/profil-deleted', (req, res, next) => {
@@ -141,15 +130,7 @@ router.get('/profil-deleted', (req, res, next) => {
 
 // Route POST/PROFIL-DELETED
 router.post('/profil-deleted', (req, res, next) => {
-  // maj en base des données modifiées
-  //const {email} = req.body;
-  // User.findOneAndDelete({_id: req.session.user._id},
-  //   {}//email: email,
-  // ).then(deleteddata => {
-  //   // Données mises à jour
-  //   console.log('coucou')
-  //   res.redirect(`/profil-deleted`)
-  // }).catch(err => next(err))
+  // Suppression en base de données
   User.findOneAndDelete({_id: req.session.user._id}, function (err) {
     if(err) console.log(err);
    console.log("Successful deletion");

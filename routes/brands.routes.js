@@ -29,10 +29,18 @@ router.get('/brand-add', (req, res, next) => {
   if (!req.session.user) {
     res.redirect('/login')
   }
-  res.render('brands/brand-add', {
-    user: req.session.user
+  Brand.find({})
+  .then((allBrandsFromDb) => {
+    res.render('brands/brand-add', {
+      brands: allBrandsFromDb
+    })
   })
-})
+  .catch(err => {
+    console.log('boom', err)
+    next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
+  })
+  })
+
 
 
 

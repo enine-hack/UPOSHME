@@ -1,11 +1,16 @@
-
-liste de toutes les marques 
-
-
-
-{{! 
-1.titre ajouter une marque
-2.une liste de toutes les marques issue de la BD des marques du fichier seeds.js
-3.bouton de enregistrement de la selection (enregistrement dans la BD du user et redirection vers la page mybrands)
-4.Bouton annuler qui redirige vers la page mybrands
- }}
+<div class="brand-add">
+  <div id="brand-add-title">
+    <h1>Ajouter une nouvelle marque</h1>
+  </div>
+  <form action="/brand-add" method="POST">
+  <label>
+    <select name="brandname" multiple>
+      {{#each brands}}
+        <option value="{{brandname}}">{{brandname}}</option>
+      {{/each}}
+    </select>
+    </label>
+  <button>ADD</button>
+</form>
+<button>RETOUR VERS MES MARQUES</button>
+</div>
