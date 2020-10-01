@@ -113,20 +113,20 @@ router.post('/profil-edit', (req, res, next) => {
   }, {new: true}).then(updateddata => {
     // Données mises à jour
     console.log(email)
-    res.redirect(`/profil-edit?message=${encodeURIComponent("coucou ca va")}`) // flash message
+    res.redirect(`/profil-edit?message=${encodeURIComponent("Vos modifications ont été enregistrées")}`) // flash message
   }).catch(err => next(err))
 })
 
-// Route GET/PROFIL-UPDATED
+// // Route GET/PROFIL-UPDATED
 
-router.get('/profil-updated', (req, res, next) => {
-  if (!req.session.user) {
-    res.redirect('/login')
-  }
-  res.render('auth/profil-updated', {
-    user: req.session.user
-  })
-})
+// router.get('/profil-updated', (req, res, next) => {
+//   if (!req.session.user) {
+//     res.redirect('/login')
+//   }
+//   res.render('auth/profil-updated', {
+//     user: req.session.user
+//   })
+// })
 
 // Route GET/PROFIL-DELETED
 
@@ -139,17 +139,22 @@ router.get('/profil-deleted', (req, res, next) => {
   })
 })
 
-// Route POST/PROFIL-DELETED == conflit
-router.post('/profil-edit', (req, res, next) => {
+// Route POST/PROFIL-DELETED
+router.post('/profil-deleted', (req, res, next) => {
   // maj en base des données modifiées
-  const {email} = req.body;
-  User.findByIdAndDelete( {
-    email: email,
-  }, {new: true}).then(updateddata => {
-    // Données mises à jour
-    console.log(email)
-    res.redirect(`/profil-deleted`)
-  }).catch(err => next(err))
+  //const {email} = req.body;
+  // User.findOneAndDelete({_id: req.session.user._id},
+  //   {}//email: email,
+  // ).then(deleteddata => {
+  //   // Données mises à jour
+  //   console.log('coucou')
+  //   res.redirect(`/profil-deleted`)
+  // }).catch(err => next(err))
+  User.findOneAndDelete({_id: req.session.user._id}, function (err) {
+    if(err) console.log(err);
+   console.log("Successful deletion");
+   res.redirect(`/profil-deleted`)
+  });
 })
 
 //Route POST Logout
