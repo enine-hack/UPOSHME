@@ -1,30 +1,41 @@
-<div id="signup">
-  <h1>M'INSCRIRE</h1>
-  <form action="/signup" method="POST">
-    <label>
-      CIVILITE
-      <input type="text" name="civilite" placeholder="M ou MME" />
-    </label>
-    <label>
-      PRENOM
+<div id="signup-page">
+  <h1>M'inscrire</h1>
+
+  <div class="signup-form">
+    <form action="/signup" method="POST">
+    <div>
+      <label> Civilité </label>
+        <select id="civilite">
+          <option value="Monsieur" name="civilite">Monsieur</option>
+          <option value="Madame" name="civilite">Madame</option>
+      </select>
+     
+      
+    </div>
+    <div>
+      <label>Prénom</label>
       <input type="text" name="firstname" placeholder="Prénom" />
-    </label>
-    <label>
-      NOM
-      <input type="text" name="lastname" placeholder="Nom" />
-    </label>
-    <label>
-      EMAIL
+    </div>
+    <div>
+      <label>Nom</label>
+        <input type="text" name="lastname" placeholder="Nom" />
+    </div>
+    <div>
+      <label>Email</label>
       <input type="text" id="input-email" name="email" placeholder="Email" />
-    </label>
-    <label>
-      PASSWORD
-      <input type="password" name="passwordHash" id="input-password" placeholder="********" />
-    </label>
-    <button>CREER UN COMPTE</button>
-    {{!-- error message will be added here --}}
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+    </div>
+    <div>
+      <label>Password</label>
+        <input type="password" name="passwordHash" id="input-password" placeholder="********" />
+    </div>
+    <div>
+      <button>CREER UN COMPTE</button>
+    </div>
+      {{!-- error message will be added here --}}
+      {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
+
 </div>

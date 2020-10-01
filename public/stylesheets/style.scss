@@ -298,4 +298,32 @@ footer li {
       ##  ##  ##    ##  ##  ####    ##     ## ##        
 ##    ##  ##  ##    ##  ##   ###    ##     ## ##        
  ######  ####  ######   ##    ##     #######  ##
- /*
+ */
+
+ #signup-page {
+    margin-left: 200px;
+    margin-top: 160px;
+    height: 700px;
+    width: 1000px;
+    font-size: 15px;
+
+ }
+
+ .signup-form div {
+   padding: 10px 10px 10px 400px;
+ }
+
+ .signup-form label {
+  display: block;
+}
+
+#civilite {
+  display: inline-block;
+  width: 100%;
+}
+
+.signup-form label+input {
+    display: inline-block;
+    width: 100%;
+    
+}
