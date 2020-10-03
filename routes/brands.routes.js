@@ -46,7 +46,7 @@ router.get('/brand-add', (req, res, next) => {
 router.post('/brand-add', (req, res, next) => {
   selectedfavbrand = req.body.brandname; // ma sélection 
   req.session.user.favoritebrands.concat(selectedfavbrand);
-  req.session.user.favoritebrands.save()
+  req.session.user.save()
     .then(() => {
       console.log(req.session.user.favoritebrands)
       res.redirect('brands/mybrands')})
