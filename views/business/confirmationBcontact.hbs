@@ -5,10 +5,19 @@
       SOCIETE
       <input type="text" name="society" placeholder="Société" />
     </label>
-    <label>
-      ACTIVITE PRINCIPALE
-      <input type="text" name="activity" placeholder="Activité principale" />
-    </label>
+
+    <label> ACTIVITE PRINCIPALE</label>
+        <select name="activity">
+          <option value="">--Selectionner--</option>
+          <option value="Mode & Accessoires">Mode & Accessoires</option>
+          <option value="Beauté & Soins">Beauté & Soins</option>
+          <option value="Maison" >Maison</option>
+          <option value="Vin & Gastronomie">Vin & Gastronomie</option>
+          <option value="Sport" >Sport</option>
+          <option value="Technologie">Technologie</option>
+          <option value="Jeux & Gadgets">Jeux & Gadgets</option>
+    </select>
+
     <label>
       PAYS
       <input type="text" name="country" placeholder="Pays" />
@@ -29,15 +38,10 @@
       EMAIL
       <input type="text" id="input-email" name="email" placeholder="Email" />
     </label>
-    
-    <button>ETRE RECONTACTE</button>
-    {{!-- error message will be added here --}}
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-    {{/if}}
   </form>
 </div>
+
 <div>
   <p>Votre demande a ete prise en compte, vous serez contacté tres prochainement. Merci pour votre interet</p>
-  <button><a href="/"></a>RETOUR A LA PAGE D'ACCUEIL</button>
+  <button><a href="/">RETOUR A LA PAGE D'ACCUEIL</a></button>
 </div>

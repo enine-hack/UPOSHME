@@ -74,6 +74,7 @@ router.post('/brand-add', (req, res, next) => {
   }, {new: true}).then(updateddata => {
     // Données mises à jour
     console.log(updateddata.favoritebrands)
+   
     res.redirect('/mybrands')
   }).catch(err => next(err))
 })
