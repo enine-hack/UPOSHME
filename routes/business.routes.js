@@ -20,7 +20,7 @@ router.get('/Bcontact', (req, res, next) => {
 
 router.post('/Bcontact', (req,res, next) => {
     // enregistrer notre Business Contact en base
-    const {society, activity, country, firstname, lastname, phone,email} = req.body
+    const {society, activity, country, firstname, lastname, phone, email} = req.body
     console.log('données Business Contact =', req.body)
     
     Business.create({

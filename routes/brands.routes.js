@@ -31,6 +31,13 @@ router.get('/brand-add', (req, res, next) => {
   }
   Brand.find({})
   .then((allBrandsFromDb) => {
+
+    allBrandsFromDb.forEach(brand => {
+      if (req.session.user.favoritebrands.includes(brand.id)) {
+        brand.infavorite = true
+      }
+    })
+
     res.render('brands/brand-add', {
       brands: allBrandsFromDb
     })
@@ -66,8 +73,8 @@ router.post('/brand-add', (req, res, next) => {
     favoritebrands: req.body.brandname
   }, {new: true}).then(updateddata => {
     // Données mises à jour
-    console.log(favoritebrands)
-    res.redirect('brands/mybrands')
+    console.log(updateddata.favoritebrands)
+    res.redirect('/mybrands')
   }).catch(err => next(err))
 })
 

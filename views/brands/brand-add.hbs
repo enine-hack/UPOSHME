@@ -6,7 +6,7 @@
   <label>
     <select name="brandname" multiple>
       {{#each brands}}
-        <option value="{{id}}">{{brandname}}</option>
+        <option value="{{id}}" {{#if this.infavorite}}selected{{/if}}>{{brandname}}</option>
       {{/each}}
     </select>
     </label>
