@@ -31,8 +31,8 @@ const userSchema = new Schema(
     },
     registrationDate: {
       type: Date,
-    }
-
+    },
+    favoritebrands: [{ type : Schema.Types.ObjectId, ref: 'Brand' }]
   },
   {
     timestamps: true

@@ -2,7 +2,7 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
-
+const User = require('../models/user.model')
 const Brand = require('../models/brand.model')
 
 const router = express.Router()
@@ -41,8 +41,68 @@ router.get('/brand-add', (req, res, next) => {
   })
   })
 
+// route POST BRAND-ADD  
+
+router.post('/brand-add', (req, res, next) => {
+  selectedfavbrand = req.body.brandname; // ma sélection 
+  req.session.user.favoritebrands.concat(selectedfavbrand);
+  req.session.user.favoritebrands.save()
+    .then(() => {
+      console.log(req.session.user.favoritebrands)
+      res.redirect('brands/mybrands')})
+
+    .catch(err => {
+      console.log('boom', err)
+      next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
+  })
+})
+  // route de traitement du formulaire 
+
+  // dans le user connecte: on veut ajouter toutes les marques selectionnees depuis la liste
+
+  // req.body.brandname // ['1234', '2345']
+
+  // req.session.user.favoriteBrands.concat()
+  // req.session.user.save().then().catch()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   Brand.find()
+//     .then(favbrands => {
+//       User.findById({_id: req.session.user._id})
+//         .populate('favoritebrands')
+//         .then(user => {
+//           //
+//           // incast: true/false for each celebrity
+//           //
+//           const favoritebrandsid = user.favoritebrands.map(el => el.id);
+//           favbrands.forEach(onebrand => {
+//             if (favoritebrandsid.includes(onebrand.id)) {
+//               onebrand.incast = true;
+//             }
+
+//           });
+
+//           res.redirect('brands/mybrands')
+//         })
+//         .catch(err => next(err))
+//       ;
+//     })
+//     .catch(err => next(err))
+// });
+ 
 
 
   
