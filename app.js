@@ -60,7 +60,7 @@ app.use('/',indexRouter)
 const authRouter = require('./routes/auth.routes')
 app.use('/',authRouter)
 const businessRouter = require('./routes/business.routes')
-app.use('/business',businessRouter)
+app.use('/',businessRouter)
 const brandsRouter = require('./routes/brands.routes')
 app.use('/',brandsRouter)
 

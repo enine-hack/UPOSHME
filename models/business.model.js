@@ -41,14 +41,7 @@ const businessSchema = new Schema(
       lowercase: true,
       trim: true,
       match: [/.*@.*\..*/, 'Invalid email']
-    },
-    passwordHash: {
-      type: String,
-      required: [true, 'Password is required.']
-    },
-    registrationDate: {
-        type: Date,
-      }
+    }
   },
   {
     timestamps: true

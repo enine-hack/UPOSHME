@@ -19,9 +19,11 @@
     <button>ENREGISTRER MODIFICATION</button>
 </form>
 
-{{#if message}}
+<div>
+  {{#if message}}
 {{message}}
 {{/if}}
+</div>
 
 <form action="/profil-deleted" method="POST">
   <button>SUPPRIMER MON COMPTE</button>

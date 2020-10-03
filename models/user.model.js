@@ -29,9 +29,6 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Password is required.']
     },
-    registrationDate: {
-      type: Date,
-    },
     favoritebrands: [{ type : Schema.Types.ObjectId, ref: 'Brand' }]
   },
   {
