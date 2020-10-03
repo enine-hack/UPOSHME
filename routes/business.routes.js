@@ -11,7 +11,7 @@ const router = express.Router()
 // Route GET BUSINESS CONTACT
 
 router.get('/contact', (req, res, next) => {
-    res.render('business/contact', {})
+    res.render('business/businesscontact', {})
   })
 
 
