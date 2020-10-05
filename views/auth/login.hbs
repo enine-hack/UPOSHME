@@ -1,15 +1,19 @@
-<div id="form">
-  <h1>SE CONNECTER</h1>
-  <form action="/login" method="POST">
-    <label>
-      EMAIL
+<div id="login-page">
+  <h1>Se connecter</h1>
+
+  <div class="login-form">
+    <form action="/login" method="POST">
+      <label>Email</label>
       <input type="email" name="email" placeholder="Email" />
-    </label>
-    <label for="input-password">PASSWORD</label>
-    <input type="password" name="password" id="input-password" placeholder="********" />
-    <button type="submit">SE CONNECTER</button>
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+      
+      <label for="input-password">Password</label>
+      <input type="password" name="password" id="input-password" placeholder="********" />
+      
+      <button type="submit">SE CONNECTER</button>
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
+
 </div>
