@@ -1,36 +1,39 @@
-{{#if user}}
-  <h1>MON PROFIL</h1>
-  <h3>{{ user.civilite }}</h3>
-  <h3>{{ user.firstname }}</h3>
-  <h3>{{ user.lastname }}</h3>  
-  <h3>Membre depuis le {{ user.createdAt }}</h3>
+<div id="profil-page">
+  {{#if user}}
+    <h1>Mon profil</h1>
+    <h2>{{ user.civilite }} {{ user.firstname }} {{ user.lastname }}</h2>  
+    <h4>Membre depuis le {{ user.createdAt }}</h4>
 
 
+  <div class="editprofil-form">
+    <form action="/profil-edit" method="POST">
+      <label>Email</label>
+        <input type="text" name="email" value="{{user.email}}" />
+      
+      <label>Mot de passe</label>
+        <input type="text" name="passwordHash"  placeholder="********" />
+      
+      <button>ENREGISTRER LES MODIFICATIONS</button>
+    </form>
+  </div>
 
-<form action="/profil-edit" method="POST">
-  <label>
-    Email
-    <input type="text" name="email" value="{{user.email}}" />
-  </label>
-  <label>
-    Mot de passe
-    <input type="text" name="passwordHash"  placeholder="********" />
-  </label>
-    <button>ENREGISTRER MODIFICATION</button>
-</form>
+  <div class="edit-confirm">
+    {{#if message}}
+      {{message}}
+    {{/if}}
+  </div>
 
-<div>
-  {{#if message}}
-{{message}}
-{{/if}}
+  <div class="profil-delete">
+  <form action="/profil-deleted" method="POST">
+      <button>Supprimer mon compte</button>
+  </form>
+  </div>
+  
+
+
+  {{else}}
+    <h3>Vous n'êtes pas connecté.</h3>
+    <button><a href="/login"></a>SE CONNECTER</button>
+  {{/if}}
+
 </div>
-
-<form action="/profil-deleted" method="POST">
-  <button>SUPPRIMER MON COMPTE</button>
-</form>
-
-
-{{else}}
-  <h3>Vous n'êtes pas connecté.</h3>
-  <button><a href="/login"></a>SE CONNECTER</button>
-{{/if}}

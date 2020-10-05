@@ -113,7 +113,7 @@ router.post('/profil-edit', (req, res, next) => {
   }, {new: true}).then(updateddata => {
     // Données mises à jour
     console.log(email)
-    res.redirect(`/profil-edit?message=${encodeURIComponent("Vos modifications ont été enregistrées")}`) // flash message
+    res.redirect(`/profil-edit?message=${encodeURIComponent("Vos modifications ont été enregistrées.")}`) // flash message
   }).catch(err => next(err))
 })
 
