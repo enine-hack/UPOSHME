@@ -301,29 +301,74 @@ footer li {
  */
 
  #signup-page {
-    margin-left: 200px;
-    margin-top: 160px;
-    height: 700px;
-    width: 1000px;
-    font-size: 15px;
+  // margin-left: 250px;
+  text-align: center;
+  margin-top: 100px;
+  height: 800px;
+  font-size: 15px;
+  
+ }
 
+ #signup-page h1{
+  text-align: center;
+  padding-bottom: 50px;
  }
 
  .signup-form div {
-   padding: 10px 10px 10px 400px;
+   padding: 10px 600px 10px 600px;
+   
+   
  }
 
  .signup-form label {
   display: block;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 10px;
+  padding-left: 2px;;
+  text-align: left;
+  color: black;
+  font-weight: bold;
+  
 }
 
-#civilite {
-  display: inline-block;
+.signup-form select {
   width: 100%;
+  height: 50px;
+  font-size: 15px;
+  background-color: #E9E9E9;
+  border-style: none;
 }
+
+// .sign-up-form select>option:hover {
+//   background-color: #ECCC8D;
+// } ??????
 
 .signup-form label+input {
     display: inline-block;
     width: 100%;
-    
+    height: 50px;
+    font-size: 15px;
+    padding-left: 10px;
+    background-color: #E9E9E9;
+    border-style: none;
+}
+
+.signup-form input:hover {
+  background-color: #ECCC8D;
+}
+
+.signup-form input:focus {
+  color: --var(--black-button);
+  background-color: #ECCC8D;
+}
+
+.signup-form button {
+  margin-top: 60px;
+  border:none;
+  padding:15px 50px 15px 50px;
+  border-radius:2px;
+  box-shadow:1px 1px 3px #aaa;
+  background: var(--black-button);
+  color: white;
+  font-size: 13px;
 }

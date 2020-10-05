@@ -4,14 +4,14 @@
   <div class="signup-form">
     <form action="/signup" method="POST">
     <div>
-      <label> Civilité</label>
+      <label>Civilité</label>
         <select name="civilite">
-          <option value="Monsieur" >Monsieur</option>
-          <option value="Madame" >Madame</option>
-      </select>
-     
-      
+          <option value="">-- Sélectionner --</option>
+          <option value="Monsieur">Monsieur</option>
+          <option value="Madame">Madame</option>
+      </select> 
     </div>
+
     <div>
       <label>Prénom</label>
       <input type="text" name="firstname" placeholder="Prénom" />
@@ -29,7 +29,7 @@
         <input type="password" name="passwordHash" id="input-password" placeholder="********" />
     </div>
     <div>
-      <button>CREER UN COMPTE</button>
+      <button>CRÉER UN COMPTE</button>
     </div>
       {{!-- error message will be added here --}}
       {{#if errorMessage}}
