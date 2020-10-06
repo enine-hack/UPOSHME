@@ -50,34 +50,49 @@ router.get('/brand-add', (req, res, next) => {
 
 // route POST BRAND-ADD  
 //ANTOINE
-// router.post('/brand-add', (req, res, next) => {
-//   selectedfavbrand = req.body.brandname; // ma sélection 
-//   req.session.user.favoritebrands.push(selectedfavbrand);
-//   req.session.user.save()
-//     .then(() => {
-//       console.log(req.session.user.favoritebrands)
-//       res.redirect('brands/mybrands')})
-
-//     .catch(err => {
-//       console.log('boom', err)
-//       next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
-//   })
-// })
-
-
-//ELO
 router.post('/brand-add', (req, res, next) => {
-  // 
-  const {brandname} = req.body;
-  User.findOneAndUpdate({_id: req.session.user._id}, {
-    favoritebrands: req.body.brandname
-  }, {new: true}).then(updateddata => {
-    // Données mises à jour
-    console.log(updateddata.favoritebrands)
-   
-    res.redirect('/mybrands')
-  }).catch(err => next(err))
+  selectedfavbrands = req.body.brandname; // ma sélection 
+  User.findById({_id: req.session.user._id})
+    .then((user) =>{
+      selectedfavbrands.forEach(selectedfavbrand => {
+        // que si pas deja
+        if (user.favoritebrands.includes(selectedfavbrand)){
+          return;
+        }else{
+          user.favoritebrands.push(selectedfavbrand)
+          console.log(user.favoritebrands)
+        }  
+      });
+
+      user.save()
+        .then(() => {
+          console.log(user.favoritebrands)
+          res.redirect('/mybrands')
+        })
+        .catch(err => {
+          console.log('boom', err)
+          next(err); 
+        })
+    }).catch(err => {
+      console.log('boom', err)
+      next(err); 
+    })
 })
+
+
+// //ELO
+// router.post('/brand-add', (req, res, next) => {
+//   // 
+//   const {brandname} = req.body;
+//   User.findOneAndUpdate({_id: req.session.user._id}, {
+//     favoritebrands: req.body.brandname
+//   }, {new: true}).then(updateddata => {
+//     // Données mises à jour
+//     console.log(updateddata.favoritebrands)
+   
+//     res.redirect('/mybrands')
+//   }).catch(err => next(err))
+// })
 
 
 
