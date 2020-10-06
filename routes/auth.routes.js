@@ -134,7 +134,9 @@ router.post('/profil-deleted', (req, res, next) => {
   User.findOneAndDelete({_id: req.session.user._id}, function (err) {
     if(err) console.log(err);
    console.log("Successful deletion");
-   res.redirect(`/profil-deleted`)
+   req.session.destroy();
+   res.redirect('/')
+   
   });
 })
 

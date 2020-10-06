@@ -277,6 +277,9 @@ footer li {
   background-color: #E9E9E9;
   border-style: none; }
 
+.signup-form select > option:hover {
+  background-color: #ECCC8D; }
+
 .signup-form label + input {
   display: inline-block;
   width: 100%;

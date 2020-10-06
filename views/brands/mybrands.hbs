@@ -7,13 +7,17 @@
   <div id="mybrands-img">
     
     {{#each brands }}
-      <div><img id="logo" src="{{logoUrl}}"></div>
+    {{#if user.favoritebrands}}
+      <div>
+        <a href="/brand-detail"><img id="logo" src="{{logoUrl}}"></div>
+        </a>
+        
       <div>{{brandname}}</div> 
-      
+      {{/if}}
 
       
     {{/each}}
     
   </div>
-
+<button><a href="/brand-detail">marque test</a></button>
 </div>

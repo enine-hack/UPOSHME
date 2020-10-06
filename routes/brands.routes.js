@@ -79,76 +79,27 @@ router.post('/brand-add', (req, res, next) => {
     })
 })
 
-
-// //ELO
-// router.post('/brand-add', (req, res, next) => {
-//   // 
-//   const {brandname} = req.body;
-//   User.findOneAndUpdate({_id: req.session.user._id}, {
-//     favoritebrands: req.body.brandname
-//   }, {new: true}).then(updateddata => {
-//     // Données mises à jour
-//     console.log(updateddata.favoritebrands)
-   
-//     res.redirect('/mybrands')
-//   }).catch(err => next(err))
-// })
+// Route GET BRAND-ID
 
 
+router.get('/Brand-detail', (req, res, next) => {
 
-
-
-
-  // route de traitement du formulaire 
-
-  // dans le user connecte: on veut ajouter toutes les marques selectionnees depuis la liste
-
-  // req.body.brandname // ['1234', '2345']
-
-  // req.session.user.favoriteBrands.concat()
-  // req.session.user.save().then().catch()
+  Brand.findOne({_id: req.body._id})
+  .then((alldetails) => {
+    
+    res.render('brands/brand-detail', {
+      alldetails: alldetails
+    })
+  })
+  .catch(err => {
+    console.log('boom', err);
+    next(err);
+  })
+})
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//   Brand.find()
-//     .then(favbrands => {
-//       User.findById({_id: req.session.user._id})
-//         .populate('favoritebrands')
-//         .then(user => {
-//           //
-//           // incast: true/false for each celebrity
-//           //
-//           const favoritebrandsid = user.favoritebrands.map(el => el.id);
-//           favbrands.forEach(onebrand => {
-//             if (favoritebrandsid.includes(onebrand.id)) {
-//               onebrand.incast = true;
-//             }
-
-//           });
-
-//           res.redirect('brands/mybrands')
-//         })
-//         .catch(err => next(err))
-//       ;
-//     })
-//     .catch(err => next(err))
-// });
- 
-
-
-  
 
 
 module.exports = router;
