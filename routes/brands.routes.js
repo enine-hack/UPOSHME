@@ -52,13 +52,11 @@ router.get('/brand-add', (req, res, next) => {
 //ANTOINE
 router.post('/brand-add', (req, res, next) => {
   selectedfavbrands = req.body.brandname; // ma sélection 
-  User.findById({_id: req.session.user._id})
+  User.findById(req.session.user._id)
     .then((user) =>{
       selectedfavbrands.forEach(selectedfavbrand => {
         // que si pas deja
-        if (user.favoritebrands.includes(selectedfavbrand)){
-          return;
-        }else{
+        if (!user.favoritebrands.includes(selectedfavbrand)){
           user.favoritebrands.push(selectedfavbrand)
           console.log(user.favoritebrands)
         }  
