@@ -6,16 +6,12 @@
 
   <div id="mybrands-img">
     
-    {{#each brands }}
-    {{#if user.favoritebrands}}
+    {{#each brands}}
       <div>
         <a href="/brand-detail"><img id="logo" src="{{logoUrl}}"></div>
         </a>
         
-      <div>{{brandname}}</div> 
-      {{/if}}
-
-      
+      <div>{{brandname}}</div>
     {{/each}}
     
   </div>
