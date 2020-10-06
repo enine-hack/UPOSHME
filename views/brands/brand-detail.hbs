@@ -1,1 +1,10 @@
-details de la brand
+<div id="brand-detail">
+    {{#each brand}}
+      <div><a href="{{websiteUrl}}" target="_blank"><img id="logo" src="{{logoUrl}}"></a></div>
+      <div>{{brandname}}</div>
+      <div>{{categorie}}</div>
+    {{/each}}
+    <button><a href="/mybrands">RETOUR VERS MES MARQUES</a></button>
+    <button><a href="">Supprimer la marque</a></button>
+  </div>
+</div>

@@ -79,16 +79,16 @@ router.post('/brand-add', (req, res, next) => {
     })
 })
 
-// Route GET BRAND-ID
+// Route GET BRAND-DETAIL
 
 
 router.get('/Brand-detail', (req, res, next) => {
 
   Brand.findOne({_id: req.body._id})
-  .then((alldetails) => {
+  .then((brand) => {
     
     res.render('brands/brand-detail', {
-      alldetails: alldetails
+      brand: brand
     })
   })
   .catch(err => {
@@ -96,6 +96,25 @@ router.get('/Brand-detail', (req, res, next) => {
     next(err);
   })
 })
+
+
+//Route POST BRAND-DETAIL
+
+// router.post('/brand-detail', (req, res, next) => {
+//   // Suppression de la marque en page  dans favoritebrand du user
+// //recuperer l 'ID de la brand
+
+//   // finder le user.favoritebrands
+// // if 
+//   //delete req.body. du user.favoritebrands
+//   User.findOneAndDelete({_id: req.session.user._id}, function (err) {
+//     if(err) console.log(err);
+//    console.log("Successful deletion");
+//    req.session.destroy();
+//    res.redirect('/')
+   
+//   });
+// })
 
 
 
