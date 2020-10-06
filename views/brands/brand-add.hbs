@@ -1,16 +1,19 @@
-<div class="brand-add">
-  <div id="brand-add-title">
-    <h1>Ajouter une nouvelle marque</h1>
-  </div>
-  <form action="/brand-add" method="POST">
-  <label>
-    <select name="brandname" multiple>
+<div id="brand-add">
+  
+  <h1>Ajouter une nouvelle marque</h1>
+  
+  <div class="addbrand-form">
+    <form action="/brand-add" method="POST">
+    <label>
+      <select name="brandname" multiple>
       {{#each brands}}
-        <option value="{{id}}" {{#if this.infavorite}}selected{{/if}}>{{brandname}}</option>
+      <option value="{{id}}" {{#if this.infavorite}}selected{{/if}}>{{brandname}}</option>
       {{/each}}
-    </select>
+      </select>
     </label>
-  <button>ADD</button>
-</form>
-<button><a href="/mybrands">RETOUR VERS MES MARQUES </a></button>
+    <button>AJOUTER</button>
+    </form>
+  </div>
+  
+  <button><a href="/mybrands">RETOUR VERS MES MARQUES </a></button>
 </div>

@@ -1,47 +1,44 @@
-<div id="business">
+<div id="business-contact">
   <h1>Augmentez vos ventes grâce à UPOSH|ME</h1>
-  <form action="/Bcontact" method="POST">
-    <label>
-      SOCIETE
-      <input type="text" name="society" placeholder="Société" />
-    </label>
 
-    <label> ACTIVITE PRINCIPALE</label>
-        <select name="activity">
-          <option value="">--Selectionner--</option>
-          <option value="Mode & Accessoires">Mode & Accessoires</option>
-          <option value="Beauté & Soins">Beauté & Soins</option>
-          <option value="Maison" >Maison</option>
-          <option value="Vin & Gastronomie">Vin & Gastronomie</option>
-          <option value="Sport" >Sport</option>
-          <option value="Technologie">Technologie</option>
-          <option value="Jeux & Gadgets">Jeux & Gadgets</option>
-    </select>
+  <div class="business-form">
+    <form action="/Bcontact" method="POST">
+      <label>Société</label>
+        <input type="text" name="society" placeholder="Société" />
+      
+      <label> Activité principale</label>
+          <select name="activity">
+            <option value="">--Selectionner--</option>
+            <option value="Mode & Accessoires">Mode & Accessoires</option>
+            <option value="Beauté & Soins">Beauté & Soins</option>
+            <option value="Maison" >Maison</option>
+            <option value="Vin & Gastronomie">Vin & Gastronomie</option>
+            <option value="Sport" >Sport</option>
+            <option value="Technologie">Technologie</option>
+            <option value="Jeux & Gadgets">Jeux & Gadgets</option>
+      </select>
 
-    <label>
-      PAYS
-      <input type="text" name="country" placeholder="Pays" />
-    </label>
-    <label>
-      PRENOM
-      <input type="text" name="firstname" placeholder="Prénom" />
-    </label>
-    <label>
-      NOM
-      <input type="text" name="lastname" placeholder="Nom" />
-    </label>
-    <label>
-      N° DE TELEPHONE
-      <input type="text" name="phone" placeholder="Numéro de téléphone" />
-    </label>
-    <label>
-      EMAIL
-      <input type="text" id="input-email" name="email" placeholder="Email" />
-    </label>
-        <button>ETRE RECONTACTE</button>
-    {{!-- error message will be added here --}}
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+      <label>Pays</label>
+        <input type="text" name="country" placeholder="Pays" />
+      
+      <label>Prénom</label>
+        <input type="text" name="firstname" placeholder="Prénom" />
+      
+      <label>Nom</label>
+        <input type="text" name="lastname" placeholder="Nom" />
+    
+      <label>N° de téléphone</label>
+        <input type="text" name="phone" placeholder="Numéro de téléphone" />
+      
+      <label>Email</label>
+        <input type="text" id="input-email" name="email" placeholder="Email" />
+      
+      <button>ÊTRE RECONTACTÉ</button>
+
+      {{!-- error message will be added here --}}
+      {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
 </div>
