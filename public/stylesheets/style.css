@@ -44,20 +44,20 @@ h3 {
   display: flex;
   align-items: center;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   padding-left: 30px;
   padding-right: 10px;
   font-family: 'Montserrat', sans-serif;
-  box-shadow: 0px 1px 3px #B5B5B5; }
+  box-shadow: 0.5px 0.5px 2px #B5B5B5; }
 
 #to-left {
-  font-size: 20px; }
+  font-size: 18px; }
 
 .navbar-container a:hover {
   color: var(--gold); }
 
 #to-right {
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,7 +77,7 @@ nav div:nth-child(2) {
   padding: 0 0 0 0;
   background: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px; }
+  font-size: 12px; }
 
 /*
 ########  #######   #######  ######## ######## ########  
@@ -157,7 +157,14 @@ footer li {
 #homepage-deuxieme-div h2 {
   padding-top: 100px;
   font-size: 45px;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 100px; }
+
+#homepage-deuxieme-div img {
+  width: 560px;
+  height: 380px;
+  object-fit: cover;
+  margin-bottom: 100px; }
 
 #homepage-troisieme-lastdiv {
   display: flex;
@@ -435,5 +442,23 @@ footer li {
 .profil-delete button {
   border: none;
   background-color: var(--light-grey); }
+
+/*
+######## ##     ## ########  #######  
+   ##    ##     ##    ##    ##     ## 
+   ##    ##     ##    ##    ##     ## 
+   ##    ##     ##    ##    ##     ## 
+   ##    ##     ##    ##    ##     ## 
+   ##    ##     ##    ##    ##     ## 
+   ##     #######     ##     #######  
+*/
+#welcome-tuto {
+  text-align: center;
+  margin-top: 100px;
+  height: 800px;
+  font-size: 15px; }
+
+#welcome-tuto h1 {
+  margin-bottom: 100px; }
 
 /*# sourceMappingURL=style.css.map */
