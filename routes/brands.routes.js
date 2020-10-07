@@ -11,15 +11,15 @@ const router = express.Router()
 //route GET MYBRANDS
 
 router.get('/mybrands', (req, res, next) => {
-  Brand.find({})
-  .then((allBrandsFromDb) => {
+  User.findById(req.session.user.favoritebrands)
+  .then((brands) => {
     res.render('brands/mybrands', {
-      brands: allBrandsFromDb
+      brands: brands
     })
   })
   .catch(err => {
     console.log('boom', err)
-    next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
+    next(err);
   })
 })
 

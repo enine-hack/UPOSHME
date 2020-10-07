@@ -14,6 +14,12 @@ mongoose.connect(`mongodb://localhost/${dbtitle}`, {
 // tableau des marques
 const brands = [
     {
+    brandname: '&TRADITION',
+    categorie: 'Maison',
+    logoUrl: 'https://pbs.twimg.com/profile_images/531817357136498691/a_8f4Mj0.jpeg',
+    websiteUrl: 'https://shop.andtradition.com/'
+    },
+    {
     brandname: 'ABERCROMBIE & FITCH',
     categorie: 'Mode et Accessoires',
     logoUrl: 'https://www.myzeil.de/fileadmin/user_upload/GLOBAL/brand_stores/logos/abercrombieandfitch.jpg',
@@ -52,85 +58,97 @@ const brands = [
     {
     brandname: 'ANNICK GOUTAL',
     categorie: 'Beauté et Soins',
-    logoUrl: 'ICI',
+    logoUrl: 'https://fimgs.net/mdimg/dizajneri/o.4.jpg',
     websiteUrl: 'https://www.goutalparis.com/'
     },
     {
     brandname: 'BA&SH',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://i.pinimg.com/280x280_RS/16/56/49/1656492db14da85a73ef57d683aea3ff.jpg',
     websiteUrl: 'https://ba-sh.com/'
     },
     {
     brandname: 'BACCARAT',
     categorie: 'Maison',
-    logoUrl: 'x',
+    logoUrl: 'https://upload.wikimedia.org/wikipedia/fr/4/4e/LOGO-BACCARAT.jpg',
     websiteUrl: 'https://www.baccarat.fr/'
     },
     {
-    brandname: 'ARMANI',
-    categorie: 'Mode et Accessoires',
-    logoUrl: 'https://journalduluxe.fr/wp-content/uploads/2017/05/armani-logo.jpg',
-    websiteUrl: 'https://www.armani.com/'
+    brandname: 'BAEBROW',
+    categorie: 'Beauté et Soins',
+    logoUrl: 'https://i.pinimg.com/280x280_RS/7d/64/41/7d644176275959609578881ff26edfa9.jpg',
+    websiteUrl: 'https://baebrow.com/'
     },
     {
     brandname: 'BALENCIAGA',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://cdn.1min30.com/wp-content/uploads/2018/03/Logo-Balenciaga-1.jpg',
     websiteUrl: 'https://www.balenciaga.com/fr'
     },
     {
     brandname: 'BALMAIN',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://www.olfastory.com/sites/www.olfastory.com/files/styles/400x400/public/balmain.jpg?itok=J3WPkBsM',
     websiteUrl: 'https://www.balmainwatches.com/'
     },
     {
     brandname: 'BERENICE',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://www.justacote.com/photos_entreprises/boutique-berenice-hyeres-14067985620.jpg',
     websiteUrl: 'https://www.berenice.net/'
+    },
+    {
+    brandname: 'BOBBI BROWN',
+    categorie: 'Beauté et Soins',
+    logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5AjGeMQVDB9YDe7_tq41FbY3cxlH36zzlMA&usqp=CAU',
+    websiteUrl: 'https://www.bobbibrowncosmetics.com/'
+    },
+    {
+    brandname: 'BOBBIES',
+    categorie: 'Mode et Accessoires',
+    logoUrl: 'https://www.fanny-chaussures.com/blog/wp-content/uploads/bobbies-618x550.png',
+    websiteUrl: 'https://www.bobbies.com/'
     },
     {
     brandname: 'BONPOINT',
     categorie: 'Enfants',
-    logoUrl: 'x',
+    logoUrl: 'https://i.pinimg.com/originals/a7/5f/4a/a75f4a415955e23049d28fdc76a52e9d.jpg',
     websiteUrl: 'https://www.bonpoint.com/'
     },
     {
     brandname: 'BOSS',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://generalperfume.com/wp-content/uploads/2016/07/hugo-boss.jpg',
     websiteUrl: 'https://www.hugoboss.com/fr/'
     },
     {
     brandname: 'BOTTEGA VENETA',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://www.mesmarques-enbourse.com/wp-content/themes/mes-marques-en-bourse/logos/600x600/21283401600.jpg',
     websiteUrl: 'https://www.bottegaveneta.com/'
     },
     {
     brandname: 'BURBERRY',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://i.pinimg.com/originals/96/ea/fa/96eafaedc9df66fe69ab833230d8ab46.jpg',
     websiteUrl: 'https://fr.burberry.com/'
     },
     {
     brandname: 'CAFE COTON',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://www.cartesesame.com/uploads/media/partner_logo/0001/12/thumb_11029_partner_logo_normal.jpeg',
     websiteUrl: 'https://www.cafecoton.fr/'
     },
     {
     brandname: 'CALVIN KLEIN',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://www.latroikastore.com/media/cache/brand_thumbnail/b0/fe/8664c0be93d6645edc6d202bd27a.jpeg',
     websiteUrl: 'https://www.calvinklein.fr/'
     },
     {
     brandname: 'CELINE',
     categorie: 'Mode et Accessoires',
-    logoUrl: 'x',
+    logoUrl: 'https://cdn.1min30.com/wp-content/uploads/2018/12/C%C3%A9line-Logo-1.jpg',
     websiteUrl: 'https://www.celine.com/'
     },
 
