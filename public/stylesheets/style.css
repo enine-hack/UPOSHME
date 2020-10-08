@@ -89,7 +89,6 @@ nav div:nth-child(2) {
 ##        #######   #######     ##    ######## ##     ## 
 */
 footer {
-  padding-top: 30px;
   padding-bottom: 30px;
   background: white; }
 
@@ -140,7 +139,7 @@ footer li {
 
 #homepage-premiere-div h3 {
   padding-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   font-size: 18px;
   width: 450px;
   text-align: center; }
@@ -170,7 +169,8 @@ footer li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-bottom: 60px; }
 
 #homepage-troisieme-lastdiv p {
   font-size: 20px;
@@ -231,7 +231,7 @@ footer li {
   width: 1350px;
   flex-wrap: wrap;
   padding-top: 150px;
-  padding-bottom: 150px; }
+  padding-bottom: 100vh; }
 
 #logo {
   width: 150px;
@@ -482,7 +482,7 @@ footer li {
   padding-bottom: 50px; }
 
 #brand-add div {
-  padding: 10px 300px 10px 300px; }
+  padding: 10px 700px 10px 700px; }
 
 .addbrand-form select {
   width: 100%;
@@ -490,6 +490,9 @@ footer li {
   font-size: 15px;
   background-color: #E9E9E9;
   border-style: none; }
+
+.addbrand-form option {
+  padding: 20px 30px 10px 20px; }
 
 .addbrand-form button {
   margin-top: 60px;
@@ -586,5 +589,128 @@ footer li {
   text-align: center;
   font-weight: bold;
   color: red; }
+
+/*
+########    ###     #######  
+##         ## ##   ##     ## 
+##        ##   ##  ##     ## 
+######   ##     ## ##     ## 
+##       ######### ##  ## ## 
+##       ##     ## ##    ##  
+##       ##     ##  ##### ## 
+*/
+#faq {
+  text-align: center;
+  margin-top: 100px;
+  height: 1000px; }
+
+#faq h1 {
+  font-size: 45px; }
+
+#faq img {
+  width: 580px;
+  height: 580px; }
+
+#faq button {
+  margin-top: 60px;
+  border: none;
+  padding: 15px 50px 15px 50px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px #aaa;
+  background: var(--black-button);
+  color: white;
+  font-size: 13px; }
+
+/*
+ ######   ######   ##     ## 
+##    ## ##    ##  ##     ## 
+##       ##        ##     ## 
+##       ##   #### ##     ## 
+##       ##    ##   ##   ##  
+##    ## ##    ##    ## ##   
+ ######   ######      ###    
+ */
+#cgv {
+  text-align: center;
+  margin-top: 100px;
+  height: 1000px; }
+
+#cgv h1 {
+  font-size: 45px; }
+
+#cgv img {
+  width: 580px;
+  height: 580px; }
+
+#cgv button {
+  margin-top: 60px;
+  border: none;
+  padding: 15px 50px 15px 50px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px #aaa;
+  background: var(--black-button);
+  color: white;
+  font-size: 13px; }
+
+/*
+ ######   #######  ##    ## ######## #### ########  ######## ##    ## ######## ####    ###    ##       #### ######## ######## 
+##    ## ##     ## ###   ## ##        ##  ##     ## ##       ###   ##    ##     ##    ## ##   ##        ##     ##    ##       
+##       ##     ## ####  ## ##        ##  ##     ## ##       ####  ##    ##     ##   ##   ##  ##        ##     ##    ##       
+##       ##     ## ## ## ## ######    ##  ##     ## ######   ## ## ##    ##     ##  ##     ## ##        ##     ##    ######   
+##       ##     ## ##  #### ##        ##  ##     ## ##       ##  ####    ##     ##  ######### ##        ##     ##    ##       
+##    ## ##     ## ##   ### ##        ##  ##     ## ##       ##   ###    ##     ##  ##     ## ##        ##     ##    ##       
+ ######   #######  ##    ## ##       #### ########  ######## ##    ##    ##    #### ##     ## ######## ####    ##    ######## 
+ */
+#confidentialite {
+  text-align: center;
+  margin-top: 100px;
+  height: 1000px; }
+
+#confidentialite h1 {
+  font-size: 45px; }
+
+#confidentialite img {
+  width: 580px;
+  height: 580px; }
+
+#confidentialite button {
+  margin-top: 60px;
+  border: none;
+  padding: 15px 50px 15px 50px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px #aaa;
+  background: var(--black-button);
+  color: white;
+  font-size: 13px; }
+
+/*
+ ######   #######  ##    ## ########    ###     ######  ######## 
+##    ## ##     ## ###   ##    ##      ## ##   ##    ##    ##    
+##       ##     ## ####  ##    ##     ##   ##  ##          ##    
+##       ##     ## ## ## ##    ##    ##     ## ##          ##    
+##       ##     ## ##  ####    ##    ######### ##          ##    
+##    ## ##     ## ##   ###    ##    ##     ## ##    ##    ##    
+ ######   #######  ##    ##    ##    ##     ##  ######     ##    
+ */
+#contact {
+  text-align: center;
+  margin-top: 100px;
+  height: 800px; }
+
+#contact h1 {
+  font-size: 45px; }
+
+#contact h3 {
+  margin-top: 100px; }
+
+#contact button {
+  margin-top: 400px;
+  border: none;
+  padding: 15px 50px 15px 50px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px #aaa;
+  background: var(--black-button);
+  color: white;
+  font-size: 13px; }
 
 /*# sourceMappingURL=style.css.map */
