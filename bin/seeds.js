@@ -1,3 +1,8 @@
+require('dotenv').config({
+  path: require('path').resolve(__dirname, '../.env')
+})
+
+
 const mongoose = require('mongoose');
 // importer le model brand
 const Brand = require('../models/brand.model');
@@ -6,7 +11,7 @@ const Brand = require('../models/brand.model');
 // donner un nom de variable à notre base 
 const dbtitle = 'uposhme';
 // connecter notre base a mongodb
-mongoose.connect(`mongodb://localhost/${dbtitle}`, {
+mongoose.connect(process.env.MONGODB_URI, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true});

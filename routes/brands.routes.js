@@ -10,8 +10,6 @@ const router = express.Router()
 
 //route GET MYBRANDS
 
-//req.session.user.favoritebrands = array id marques
-
 router.get('/mybrands', (req, res, next) => {
   User.findById(req.session.user._id)
     .populate('favoritebrands')
@@ -82,13 +80,11 @@ router.post('/brand-add', (req, res, next) => {
 })
 
 // Route GET BRAND-DETAIL
-
-
-router.get('/Brand-detail', (req, res, next) => {
-
-  Brand.findOne({_id: req.body._id})
+router.get('/Brand-detail/:id', (req, res, next) => {
+  const id = req.params.id // le nom doit être le même que celui de la route
+  Brand.findOne({_id: id})
   .then((brand) => {
-    
+    console.log('brand', brand)  
     res.render('brands/brand-detail', {
       brand: brand
     })
@@ -99,8 +95,33 @@ router.get('/Brand-detail', (req, res, next) => {
   })
 })
 
-
 //Route POST BRAND-DETAIL
+router.post('/Brand-detail/:id/delete', (req, res, next) => {
+  
+  Brand.findByIdAndDelete(req.params.id).then(() => {
+    res.redirect('/mybrands')
+  }).catch(err => next(err))
+})
+
+
+// router.get('/Brand-detail/:id', (req, res, next) => {
+// //req.param.id
+// //supprimer l id de l array 
+//   Brand.findOne({_id: req.body._id})
+//   .then((brand) => {
+    
+//     res.render('brands/brand-detail', {
+//       brand: brand
+//     })
+//   })
+//   .catch(err => {
+//     console.log('boom', err);
+//     next(err);
+//   })
+// })
+
+
+// //Route POST BRAND-DETAIL
 
 // router.post('/brand-detail', (req, res, next) => {
 //   // Suppression de la marque en page  dans favoritebrand du user
