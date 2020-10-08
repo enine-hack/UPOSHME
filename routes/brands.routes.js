@@ -14,7 +14,7 @@ router.get('/mybrands', (req, res, next) => {
   User.findById(req.session.user._id)
     .populate('favoritebrands')
     .then((user) => {
-      console.log('coucou',user.favoritebrands);
+      //console.log('coucou',user.favoritebrands);
       
 
       res.render('brands/mybrands', {
@@ -81,10 +81,10 @@ router.post('/brand-add', (req, res, next) => {
 
 // Route GET BRAND-DETAIL
 router.get('/Brand-detail/:id', (req, res, next) => {
-  const id = req.params.id // le nom doit être le même que celui de la route
+  const id = req.params.id 
   Brand.findOne({_id: id})
   .then((brand) => {
-    console.log('brand', brand)  
+   // console.log('brand', brand)  
     res.render('brands/brand-detail', {
       brand: brand
     })
@@ -97,10 +97,22 @@ router.get('/Brand-detail/:id', (req, res, next) => {
 
 //Route POST BRAND-DETAIL
 router.post('/Brand-detail/:id/delete', (req, res, next) => {
-  
-  Brand.findByIdAndDelete(req.params.id).then(() => {
-    res.redirect('/mybrands')
-  }).catch(err => next(err))
+  let idtoDelete = req.params.id
+  console.log('idtoDelete',idtoDelete);
+  User.findById(req.session.user._id)
+    .then((user)=>{
+     // user.favoritebrands.splice(indexOf(idtoDelete),1)
+      console.log(user.favoritebrands)
+      res.redirect('/mybrands')
+    })
+    .catch(err => {
+      console.log('boom', err);
+      next(err);
+    })
+
+  // Brand.findByIdAndDelete(req.params.id).then(() => {
+  //   res.redirect('/mybrands')
+  // }).catch(err => next(err))
 })
 
 
