@@ -591,6 +591,70 @@ footer li {
   color: red; }
 
 /*
+########  ##     ##  ######  #### ##    ## ########  ######   ######      ######   #######  ##    ## ######## #### ########  ##     ##    ###    ######## ####  #######  ##    ## 
+##     ## ##     ## ##    ##  ##  ###   ## ##       ##    ## ##    ##    ##    ## ##     ## ###   ## ##        ##  ##     ## ###   ###   ## ##      ##     ##  ##     ## ###   ## 
+##     ## ##     ## ##        ##  ####  ## ##       ##       ##          ##       ##     ## ####  ## ##        ##  ##     ## #### ####  ##   ##     ##     ##  ##     ## ####  ## 
+########  ##     ##  ######   ##  ## ## ## ######    ######   ######     ##       ##     ## ## ## ## ######    ##  ########  ## ### ## ##     ##    ##     ##  ##     ## ## ## ## 
+##     ## ##     ##       ##  ##  ##  #### ##             ##       ##    ##       ##     ## ##  #### ##        ##  ##   ##   ##     ## #########    ##     ##  ##     ## ##  #### 
+##     ## ##     ## ##    ##  ##  ##   ### ##       ##    ## ##    ##    ##    ## ##     ## ##   ### ##        ##  ##    ##  ##     ## ##     ##    ##     ##  ##     ## ##   ### 
+########   #######   ######  #### ##    ## ########  ######   ######      ######   #######  ##    ## ##       #### ##     ## ##     ## ##     ##    ##    ####  #######  ##    ## 
+*/
+#business-confirm {
+  text-align: center;
+  margin-top: 100px;
+  height: 1000px;
+  font-size: 15px; }
+
+#business-confirm h1 {
+  text-align: center;
+  padding-bottom: 50px; }
+
+#business-confirm div {
+  padding: 10px 550px 10px 550px; }
+
+.businessconfirm-form label {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 10px;
+  padding-left: 2px;
+  text-align: left;
+  color: black;
+  font-weight: bold; }
+
+.businessconfirm-form select {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  background-color: #E9E9E9;
+  border-style: none;
+  margin-bottom: 20px; }
+
+.businessconfirm-form label + input {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  padding-left: 10px;
+  background-color: #E9E9E9;
+  border-style: none;
+  margin-bottom: 20px; }
+
+.businessconfirm-form button {
+  margin-top: 60px;
+  border: none;
+  padding: 15px 50px 15px 50px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px #aaa;
+  background: var(--black-button);
+  color: white;
+  font-size: 13px; }
+
+.msg-confirmation {
+  height: 300px;
+  width: 100px;
+  position: absolute; }
+
+/*
 ########    ###     #######  
 ##         ## ##   ##     ## 
 ##        ##   ##  ##     ## 

@@ -10,19 +10,24 @@ const router = express.Router()
 
 //route GET MYBRANDS
 
-router.get('/mybrands', (req, res, next) => {
-  User.findById(req.session.user.favoritebrands)
-  .then((brands) => {
-    res.render('brands/mybrands', {
-      brands: brands
-    })
-  })
-  .catch(err => {
-    console.log('boom', err)
-    next(err);
-  })
-})
+//req.session.user.favoritebrands = array id marques
 
+router.get('/mybrands', (req, res, next) => {
+  User.findById(req.session.user._id)
+    .populate('favoritebrands')
+    .then((user) => {
+      console.log('coucou',user.favoritebrands);
+      
+
+      res.render('brands/mybrands', {
+        brands: user.favoritebrands
+      })
+   })
+   .catch(err => {
+     console.log('boom', err)
+     next(err);
+   })
+})
 // route GET BRAND-ADD  
 
 router.get('/brand-add', (req, res, next) => {
@@ -49,7 +54,6 @@ router.get('/brand-add', (req, res, next) => {
   })
 
 // route POST BRAND-ADD  
-//ANTOINE
 router.post('/brand-add', (req, res, next) => {
   selectedfavbrands = req.body.brandname; // ma sélection 
   User.findById(req.session.user._id)
@@ -58,13 +62,13 @@ router.post('/brand-add', (req, res, next) => {
         // que si pas deja
         if (!user.favoritebrands.includes(selectedfavbrand)){
           user.favoritebrands.push(selectedfavbrand)
-          console.log(user.favoritebrands)
+          //console.log(user.favoritebrands)
         }  
       });
 
       user.save()
         .then(() => {
-          console.log(user.favoritebrands)
+          //console.log(user.favoritebrands)
           res.redirect('/mybrands')
         })
         .catch(err => {
