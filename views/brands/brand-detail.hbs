@@ -1,10 +1,17 @@
 <div id="brand-detail">
-      <div><a href="{{brand.websiteUrl}}" target="_blank"><img id="logo" src="{{brand.logoUrl}}"></a></div>
-      <div>{{brand.brandname}}</div>
-      <div>{{brand.categorie}}</div>
+    <h1>{{brand.brandname}}</h1>
+    <h2>{{brand.categorie}}</h2>
+    <div class="logodetail-img">
+      <a href="{{brand.websiteUrl}}" target="_blank">
+        <img class="logo-detail" src="{{brand.logoUrl}}">
+      </a>
+    </div>
+      
+      
     
     <button><a href="/mybrands">RETOUR VERS MES MARQUES</a></button>
-    <form action="/Brand-detail/{{id}}/delete" method="POST"><button>Supprimer la marque</button></form>
+
+    <form action="/Brand-detail/{{id}}/delete" method="POST"><button class="deletebrand-button">Supprimer la marque</button></form>
   </div>
 </div>
 

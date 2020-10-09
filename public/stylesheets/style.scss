@@ -271,7 +271,7 @@ footer li {
 }
 
 #mybrands-entete h1{
-  margin-right: 760px;
+  margin-right: 730px;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 40px;
@@ -294,7 +294,7 @@ footer li {
 #mybrands-img {
   display: flex;
   justify-content: left;
-  margin-left: 300px;
+  margin-left: 310px;
   width: 1350px;
   flex-wrap: wrap;
   padding-top: 150px;
@@ -306,7 +306,8 @@ footer li {
   width: 150px; 
   height: 150px; 
   object-fit: cover;
-  margin-right: 15px; 
+  margin-right: 10px; 
+  margin-bottom: 10px;
 }
 
 /*
@@ -642,7 +643,66 @@ footer li {
   color: red;
 }
 
+/*
+########  ########     ###    ##    ## ########     ########  ######## ########    ###    #### ##        ######  
+##     ## ##     ##   ## ##   ###   ## ##     ##    ##     ## ##          ##      ## ##    ##  ##       ##    ## 
+##     ## ##     ##  ##   ##  ####  ## ##     ##    ##     ## ##          ##     ##   ##   ##  ##       ##       
+########  ########  ##     ## ## ## ## ##     ##    ##     ## ######      ##    ##     ##  ##  ##        ######  
+##     ## ##   ##   ######### ##  #### ##     ##    ##     ## ##          ##    #########  ##  ##             ## 
+##     ## ##    ##  ##     ## ##   ### ##     ##    ##     ## ##          ##    ##     ##  ##  ##       ##    ## 
+########  ##     ## ##     ## ##    ## ########     ########  ########    ##    ##     ## #### ########  ######  
+*/
 
+#brand-detail {
+    text-align: center;
+    margin-top: 100px;
+    height: 800px;
+    font-size: 15px;
+}
+
+#brand-detail h1 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--medium-grey);
+  width: 700px
+}
+
+.logo-detail {
+  height: 400px;
+
+}
+.logodetail-img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+
+.logodetail-img:hover {
+	-webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+#brand-detail h2 {
+  margin-top: 30px;
+}
+
+#brand-detail button {
+  margin-top: 60px;
+  border:none;
+  padding:15px 50px 15px 50px;
+  border-radius:2px;
+  box-shadow:1px 1px 3px #aaa;
+  background: var(--black-button);
+  color: white;
+  font-size: 13px;
+}
+
+// #brand-detail deletebrand-button {
+//   color: red;
+// }
 
 
 
