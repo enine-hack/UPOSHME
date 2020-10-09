@@ -547,9 +547,15 @@ footer li {
   margin-bottom: 150px;
 }
 
-.profil-delete button{
+.profil-delete button {
   border: none;
   background-color: var(--light-grey);
+}
+
+.profil-delete button:hover {
+  border: none;
+  background-color: var(--light-grey);
+  color:red;
 }
 
 /*
@@ -669,14 +675,14 @@ footer li {
 }
 
 .logo-detail {
-  height: 400px;
+  height: 300px;
 
 }
 .logodetail-img {
 	-webkit-transform: scale(1);
 	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+	-webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 
@@ -687,9 +693,10 @@ footer li {
 
 #brand-detail h2 {
   margin-top: 30px;
+  margin-bottom: 50px;
 }
 
-#brand-detail button {
+.returnmybrand-button {
   margin-top: 60px;
   border:none;
   padding:15px 50px 15px 50px;
@@ -698,11 +705,19 @@ footer li {
   background: var(--black-button);
   color: white;
   font-size: 13px;
+  margin-bottom: 150px;
 }
 
-// #brand-detail deletebrand-button {
-//   color: red;
-// }
+.deletebrand-button {
+  border: none;
+  background-color: var(--light-grey);
+}
+
+.deletebrand-button:hover {
+  border: none;
+  background-color: var(--light-grey);
+  color:red;
+}
 
 
 
@@ -805,68 +820,42 @@ footer li {
 ##     ## ##     ## ##    ##  ##  ##   ### ##       ##    ## ##    ##    ##    ## ##     ## ##   ### ##        ##  ##    ##  ##     ## ##     ##    ##     ##  ##     ## ##   ### 
 ########   #######   ######  #### ##    ## ########  ######   ######      ######   #######  ##    ## ##       #### ##     ## ##     ## ##     ##    ##    ####  #######  ##    ## 
 */
-#business-confirm {
-  text-align: center;
-  margin-top: 100px;
-  height: 1000px;
-  font-size: 15px;
+
+
+.popin .close {
+  display:block;
+  width: 30px;
+  height: 30px;
+  background: white;
+  position:absolute; top:0; right:0;
+  border: 1px solid; 
 }
 
-#business-confirm h1{
-  text-align: center;
-  padding-bottom: 50px;
- }
-
- #business-confirm div {
-  padding: 10px 550px 10px 550px;
-}
-
-.businessconfirm-form label {
- display: block;
- font-family: 'Roboto', sans-serif;
- padding-bottom: 10px;
- padding-left: 2px;;
- text-align: left;
- color: black;
- font-weight: bold;
-}
-
-.businessconfirm-form select {
-  width: 100%;
-  height: 50px;
-  font-size: 15px;
-  background-color: #E9E9E9;
-  border-style: none;
-  margin-bottom: 20px;
-}
-
-.businessconfirm-form label+input {
-   display: inline-block;
-   width: 100%;
-   height: 50px;
-   font-size: 15px;
-   padding-left: 10px;
-   background-color: #E9E9E9;
-   border-style: none;
-   margin-bottom: 20px;
-}
-
-.businessconfirm-form button {
- margin-top: 60px;
- border:none;
- padding:15px 50px 15px 50px;
- border-radius:2px;
- box-shadow:1px 1px 3px #aaa;
- background: var(--black-button);
- color: white;
- font-size: 13px;
-}
-
-.msg-confirmation {
-  height:300px;
-  width: 100px;
-  position: absolute;
+.popin {
+  position:relative;
+  background: var(--black-button);
+  height: 40vh;
+  width: 35%;
   
+  display: flex;
+  align-items: center; justify-content: center;
+  margin: auto;
+  
+  box-shadow: 0 0 10px rgba(0,0,0,.25);
+  
+  font-size: 20px;
+  color: white;
+}
+
+.popin span {
+  display: block; width: 100%; text-align:center;
+}
+
+
+
+.business-confirm{
+  height: 100vh;
+  display: flex;
 }
 
 /*
