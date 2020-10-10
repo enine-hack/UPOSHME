@@ -549,7 +549,8 @@ footer li {
   width: 700px; }
 
 .logo-detail {
-  height: 300px; }
+  height: 300px;
+  box-shadow: 0px 0px 2px #aaa; }
 
 .logodetail-img {
   -webkit-transform: scale(1);
