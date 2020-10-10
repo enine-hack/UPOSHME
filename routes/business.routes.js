@@ -10,7 +10,6 @@ const router = express.Router()
 
 // Route GET BUSINESS CONTACT
 
-/* GET CGV */
 router.get('/Bcontact', (req, res, next) => {
   res.render('business/businesscontact');
 });
@@ -31,10 +30,12 @@ router.post('/Bcontact', (req,res, next) => {
       lastname: lastname,
       phone:phone,
       email:email,
-    }).then(businesscontactFromDb => {
+    })
+    .then(businesscontactFromDb => {
       res.render('business/confirmationBcontact')
      // res.send('user créé!')
-    }).catch(err => {
+    })
+    .catch(err => {
       console.log(':boum:', err);
       // new mongoose.Error.ValidationError()
       if (err instanceof mongoose.Error.ValidationError || err.code === 11000) {
@@ -48,7 +49,5 @@ router.post('/Bcontact', (req,res, next) => {
       }
     })
   })
-
-
 
   module.exports = router;

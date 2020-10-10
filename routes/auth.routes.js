@@ -10,19 +10,21 @@ const User = require('../models/user.model')
 const router = express.Router()
 
 router.get('/tuto', (req, res, next) => {
- res.render('auth/tuto', {})
- })
+  res.render('auth/tuto', {})
+})
 
 // Route GET SIGNUP USER
 
 router.get('/signup', (req, res, next) => {
-    res.render('auth/signup', {})
-  })
+  res.render('auth/signup', {})
+})
 
 //Route POST SIGNUP USER
 const salt = bcryptjs.genSaltSync(10)
+
 router.post('/signup', (req,res, next) => {
     console.log('données User =', req.body)
+
     // enregistrer notre user en base
     const {civilite, firstname, lastname, email, passwordHash, registrationDate} = req.body
     const plainPassword = req.body.passwordHash;
@@ -35,28 +37,30 @@ router.post('/signup', (req,res, next) => {
       email: req.body.email,
       passwordHash: hashed,
       registrationDate : req.body.registrationDate
-    }).then(userFromDb => {
+    })
+      .then(userFromDb => {
       res.redirect('/tuto')
      // res.send('user créé!')
-    }).catch(err => {
+      })
+      .catch(err => {
       console.log(':boum:', err);
       // new mongoose.Error.ValidationError()
-      if (err instanceof mongoose.Error.ValidationError || err.code === 11000) {
+        if (err instanceof mongoose.Error.ValidationError || err.code === 11000) {
         // re-afficher le formulaire
-        console.log('Error de validation mongoose !')
-        res.render('auth/signup', {
+          console.log('Error de validation mongoose !')
+          res.render('auth/signup', {
           errorMessage: err.message
-        })
-      } else {
-        next(err) // hotline
-      }
-    })
-  })
+          })
+        } else {
+          next(err) // hotline
+        }
+      })
+})
 
 // Route GET LOGIN USER 
 router.get('/login', (req, res, next) => {
     res.render('auth/login')
-  })
+})
 
 // Route POST LOGIN USER
 router.post('/login', (req, res, next) => {
@@ -68,7 +72,7 @@ router.post('/login', (req, res, next) => {
       errorMessage: 'Veuillez saisir votre email et/ou votre mot de passe'
     });
     return; // STOP
-  }
+ }
   User.findOne({email: email})
     .then(user => {
       if (!user) {
@@ -90,26 +94,24 @@ router.post('/login', (req, res, next) => {
     })
 })
 
-
 // Route GET/PROFIL-EDIT
 
 router.get('/profil-edit', (req, res, next) => {
   if (!req.session.user) {
     res.redirect('/login')
   }
-let membersince = dayjs(req.session.user.createdAt).format("DD-MM-YYYY")
+  let membersince = dayjs(req.session.user.createdAt).format("DD-MM-YYYY")
+  req.session.user.createdAt = membersince
 
-req.session.user.createdAt = membersince
-
-console.log('date:',membersince)
+  console.log('date:',membersince)
   res.render('auth/profil-edit', {
     user: req.session.user,
     message: req.query.message,
   })
 })
 
-
 // Route POST/PROFIL-EDIT
+
 router.post('/profil-edit', (req, res, next) => {
   // maj en base des données modifiées
   const {email, passwordHash} = req.body;
@@ -120,7 +122,8 @@ router.post('/profil-edit', (req, res, next) => {
     // Données mises à jour
     console.log(email)
     res.redirect(`/profil-edit?message=${encodeURIComponent("Vos modifications ont été enregistrées.")}`) // flash message
-  }).catch(err => next(err))
+  })
+  .catch(err => next(err))
 })
 
 // Route GET/PROFIL-DELETED
@@ -135,6 +138,7 @@ router.get('/profil-deleted', (req, res, next) => {
 })
 
 // Route POST/PROFIL-DELETED
+
 router.post('/profil-deleted', (req, res, next) => {
   // Suppression en base de données
   User.findOneAndDelete({_id: req.session.user._id}, function (err) {

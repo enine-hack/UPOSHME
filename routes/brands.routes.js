@@ -23,6 +23,7 @@ router.get('/mybrands', (req, res, next) => {
      next(err);
    })
 })
+
 // route GET BRAND-ADD  
 
 router.get('/brand-add', (req, res, next) => {
@@ -51,7 +52,7 @@ router.get('/brand-add', (req, res, next) => {
   })
   .catch(err => {
     console.log('boom', err)
-    next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
+    next(err);
   })
 })
 
@@ -91,6 +92,7 @@ router.post('/brand-add', (req, res, next) => {
 })
 
 // Route GET BRAND-DETAIL
+
 router.get('/Brand-detail/:id', (req, res, next) => {
   const id = req.params.id 
   Brand.findOne({_id: id})
@@ -107,6 +109,7 @@ router.get('/Brand-detail/:id', (req, res, next) => {
 })
 
 //Route POST BRAND-DETAIL
+
 router.post('/Brand-detail/:id/delete', (req, res, next) => {
   let idtoDelete = req.params.id
   //console.log('idtoDelete',idtoDelete);
@@ -130,51 +133,6 @@ router.post('/Brand-detail/:id/delete', (req, res, next) => {
       console.log('boom', err);
       next(err);
     })
-
-  // Brand.findByIdAndDelete(req.params.id).then(() => {
-  //   res.redirect('/mybrands')
-  // }).catch(err => next(err))
 })
-
-
-// router.get('/Brand-detail/:id', (req, res, next) => {
-// //req.param.id
-// //supprimer l id de l array 
-//   Brand.findOne({_id: req.body._id})
-//   .then((brand) => {
-    
-//     res.render('brands/brand-detail', {
-//       brand: brand
-//     })
-//   })
-//   .catch(err => {
-//     console.log('boom', err);
-//     next(err);
-//   })
-// })
-
-
-// //Route POST BRAND-DETAIL
-
-// router.post('/brand-detail', (req, res, next) => {
-//   // Suppression de la marque en page  dans favoritebrand du user
-// //recuperer l 'ID de la brand
-
-//   // finder le user.favoritebrands
-// // if 
-//   //delete req.body. du user.favoritebrands
-//   User.findOneAndDelete({_id: req.session.user._id}, function (err) {
-//     if(err) console.log(err);
-//    console.log("Successful deletion");
-//    req.session.destroy();
-//    res.redirect('/')
-   
-//   });
-// })
-
-
-
-
-
 
 module.exports = router;
