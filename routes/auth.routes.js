@@ -103,11 +103,20 @@ router.get('/profil-edit', (req, res, next) => {
   let membersince = dayjs(req.session.user.createdAt).format("DD-MM-YYYY")
   req.session.user.createdAt = membersince
 
-  console.log('date:',membersince)
-  res.render('auth/profil-edit', {
-    user: req.session.user,
-    message: req.query.message,
-  })
+  User.findById(req.session.user._id)
+    .then((user) => {
+      console.log('date:',membersince)
+    res.render('auth/profil-edit', {
+      user: user,
+      message: req.query.message,
+    })
+    })
+    .catch(err => {
+      console.log('boom', err)
+      next(err);
+    })
+
+  
 })
 
 // Route POST/PROFIL-EDIT
