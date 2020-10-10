@@ -3,6 +3,7 @@
 const express = require('express')
 const bcryptjs = require('bcryptjs')
 const mongoose = require('mongoose')
+const dayjs = require('dayjs')
 
 const User = require('../models/user.model')
 
@@ -96,7 +97,11 @@ router.get('/profil-edit', (req, res, next) => {
   if (!req.session.user) {
     res.redirect('/login')
   }
+let membersince = dayjs(req.session.user.createdAt).format("DD-MM-YYYY")
 
+req.session.user.createdAt = membersince
+
+console.log('date:',membersince)
   res.render('auth/profil-edit', {
     user: req.session.user,
     message: req.query.message,
