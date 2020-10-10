@@ -14,9 +14,6 @@ router.get('/mybrands', (req, res, next) => {
   User.findById(req.session.user._id)
     .populate('favoritebrands')
     .then((user) => {
-      //console.log('coucou',user.favoritebrands);
-      
-
       res.render('brands/mybrands', {
         brands: user.favoritebrands
       })
@@ -54,6 +51,13 @@ router.get('/brand-add', (req, res, next) => {
 // route POST BRAND-ADD  
 router.post('/brand-add', (req, res, next) => {
   selectedfavbrands = req.body.brandname; // ma sélection 
+  console.log(typeof(selectedfavbrands))
+    if(typeof(selectedfavbrands) === 'string'){
+       selectedfavbrands = selectedfavbrands.split()
+       console.log(selectedfavbrands) 
+      }
+
+ // console.log(selectedfavbrands)
   User.findById(req.session.user._id)
     .then((user) =>{
       selectedfavbrands.forEach(selectedfavbrand => {
@@ -98,12 +102,22 @@ router.get('/Brand-detail/:id', (req, res, next) => {
 //Route POST BRAND-DETAIL
 router.post('/Brand-detail/:id/delete', (req, res, next) => {
   let idtoDelete = req.params.id
-  console.log('idtoDelete',idtoDelete);
+  //console.log('idtoDelete',idtoDelete);
+  //console.log(req.session.user._id)
+ // console.log(req.session.user._id)
   User.findById(req.session.user._id)
     .then((user)=>{
-     // user.favoritebrands.splice(indexOf(idtoDelete),1)
-      console.log(user.favoritebrands)
-      res.redirect('/mybrands')
+      let index = user.favoritebrands.indexOf(idtoDelete)
+      //console.log(index)
+      user.favoritebrands.splice(index,1)
+     // console.log(user.favoritebrands)
+      //res.redirect('/mybrands')
+     
+      user.save()
+        .then(() => {
+          //console.log(user.favoritebrands)
+          res.redirect('/mybrands')
+        })
     })
     .catch(err => {
       console.log('boom', err);
