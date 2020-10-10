@@ -96,9 +96,10 @@ router.get('/profil-edit', (req, res, next) => {
   if (!req.session.user) {
     res.redirect('/login')
   }
+
   res.render('auth/profil-edit', {
     user: req.session.user,
-    message: req.query.message
+    message: req.query.message,
   })
 })
 

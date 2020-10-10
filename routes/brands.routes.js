@@ -31,22 +31,29 @@ router.get('/brand-add', (req, res, next) => {
   }
   Brand.find({})
   .then((allBrandsFromDb) => {
-
-    allBrandsFromDb.forEach(brand => {
-      if (req.session.user.favoritebrands.includes(brand.id)) {
-        brand.infavorite = true
-      }
-    })
-
-    res.render('brands/brand-add', {
-      brands: allBrandsFromDb
-    })
+     User.findById(req.session.user._id)
+      .populate('favoritebrands')
+      .then((user) => {
+        const favbrandsId = user.favoritebrands.map(el=>el.id);
+        allBrandsFromDb.forEach(brand => {
+          if (favbrandsId.includes(brand.id)){
+          brand.infavorite = true
+          }
+        })
+        res.render('brands/brand-add', {
+        brands: allBrandsFromDb
+        })
+      })
+      .catch(err => {
+      console.log('boom', err)
+      next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
+      })
   })
   .catch(err => {
     console.log('boom', err)
     next(err); //midleware d'erreur défini dans WWW pour ne pas avoir l'erreur qui tourne indéfiniement
   })
-  })
+})
 
 // route POST BRAND-ADD  
 router.post('/brand-add', (req, res, next) => {
